@@ -17,7 +17,7 @@ enum CliCommand {
     GenerateKey,
     Send,
     Stake,
-    Delete,
+    DeleteAccount,
 }
 
 #[paw::main]

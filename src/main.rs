@@ -11,7 +11,7 @@ enum CliCommand {
     GenerateKey(GenerateKey),
     Send(Send),
     Stake(Stake),
-    Delete(Delete),
+    DeleteAccount(DeleteAccount),
 }
 
 #[derive(Debug, StructOpt)]
@@ -66,7 +66,7 @@ struct Stake {
 }
 
 #[derive(Debug, StructOpt)]
-struct Delete {
+struct DeleteAccount {
     account_id: String,
 }
 
@@ -83,7 +83,7 @@ fn main(args: CliCommand) {
         CliCommand::DeleteKey(DeleteKey) => println!("*** delete key"),
         CliCommand::Send(Send) => println!("*** send"),
         CliCommand::Stake(Stake) => println!("*** stake"),
-        CliCommand::Delete(DeleteKey) => println!("*** delete"),
+        CliCommand::DeleteAccount(DeleteAccount) => println!("*** delete account"),
         // _ => println!("*** NONONO")
     }
 }

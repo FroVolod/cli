@@ -75,7 +75,7 @@ fn main(args: CliCommand) {
     println!("Hello, world! \n {:#?}", &args);
     match args {
         CliCommand::Login(Login) => println!("*** login"),
-        CliCommand::CreateAccount(CreateAccount) => println!("*** craete account"),
+        CliCommand::CreateAccount(CreateAccount) => println!("*** create account"),
         CliCommand::State(State) => println!("*** state"),
         CliCommand::Keys(Keys) => println!("*** keys"),
         CliCommand::AddKey(AddKey) => println!("*** add key"),

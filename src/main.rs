@@ -26,11 +26,6 @@ enum CliCommand {
     DeleteAccount(delete_account_command::DeleteAccount),
 }
 
-#[derive(Debug, StructOpt)]
-struct DeleteAccount {
-    account_id: String,
-}
-
 #[paw::main]
 fn main(args: CliCommand) {
     println!("Hello, world! \n {:#?}", &args);

@@ -1,68 +1,29 @@
 use structopt::StructOpt;
 
+mod login_command;
+mod create_account_command;
+mod state_command;
+mod keys_command;
+mod add_key_command;
+mod delete_key_command;
+mod generate_key_command;
+mod send_command;
+mod stake_command;
+mod delete_account_command;
+
+
 #[derive(Debug, StructOpt)]
 enum CliCommand {
-    Login(Login),
-    CreateAccount(CreateAccount),
-    State(State),
-    Keys(Keys),
-    AddKey(AddKey),
-    DeleteKey(DeleteKey),
-    GenerateKey(GenerateKey),
-    Send(Send),
-    Stake(Stake),
-    DeleteAccount(DeleteAccount),
-}
-
-#[derive(Debug, StructOpt)]
-struct Login {
-    account_id: String,
-}
-
-#[derive(Debug, StructOpt)]
-struct CreateAccount {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct State {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct Keys {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct AddKey {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct DeleteKey {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct GenerateKey {
-    account_id: String,
-    }
-
-#[derive(Debug, StructOpt)]
-struct Send {
-    #[structopt(long)]  // Можно удалить строку. Тогда субкоманда будет работать без "флага".
-    account_id: String,
-    #[structopt(long)]
-    receiver_id: String,
-    #[structopt(long)]
-    amount: u128,
-}
-
-#[derive(Debug, StructOpt)]
-struct Stake {
-    account_id: String,
-    amount: u128,
+    Login(login_command::Login),
+    CreateAccount(create_account_command::CreateAccount),
+    State(state_command::State),
+    Keys(keys_command::Keys),
+    AddKey(add_key_command::AddKey),
+    DeleteKey(delete_key_command::DeleteKey),
+    GenerateKey(generate_key_command::GenerateKey),
+    Send(send_command::Send),
+    Stake(stake_command::Stake),
+    DeleteAccount(delete_account_command::DeleteAccount),
 }
 
 #[derive(Debug, StructOpt)]

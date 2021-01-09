@@ -2,7 +2,7 @@ use structopt::StructOpt;
 
 mod login_command;
 mod state_command;
-mod working_with_keys;
+mod working_with_keys_command;
 mod construct_transaction_command;
 
 
@@ -11,7 +11,7 @@ enum CliCommand {
     Login(login_command::Login),
     State(state_command::State),
     ConstructTransactionCommand(construct_transaction_command::TransactionCommand),
-    WorkingWithKeys(working_with_keys::KeysCommand),
+    WorkingWithKeys(working_with_keys_command::KeysCommand),
     
 }
 
@@ -25,8 +25,8 @@ fn main(args: CliCommand) {
         CliCommand::ConstructTransactionCommand(transaction_command) => {
             construct_transaction_command::TransactionCommand::call(transaction_command);
         },
-        CliCommand::WorkingWithKeys(working_with_keys) => {
-            working_with_keys::KeysCommand::call(working_with_keys);
+        CliCommand::WorkingWithKeys(keys_command) => {
+            working_with_keys_command::KeysCommand::call(keys_command);
         }
         _ => println!("*** NONONO")
     }

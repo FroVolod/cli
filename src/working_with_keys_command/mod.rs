@@ -15,6 +15,6 @@ pub enum KeysCommand {
 
 impl KeysCommand {
     pub fn call(self) {
-        println!("=== this is module named \"working_with_keys\"\n {:?}", &self)
+        println!("=== this is module named \"working_with_keys\":\n {:?}", &self)
     }
 }
